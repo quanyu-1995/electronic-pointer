@@ -108,10 +108,10 @@ class MagnifierWindow(QWidget):
         
         painter.setPen(QPen(QBrush(gradient), self.border_width))
         painter.setBrush(Qt.BrushStyle.NoBrush)
-        painter.drawEllipse(cx, cy, radius * 2, radius * 2)
+        painter.drawEllipse(cx - radius, cy - radius, radius * 2, radius * 2)
         
         painter.setPen(QPen(QColor(255, 255, 255, 100), 1))
-        painter.drawEllipse(cx + 2, cy + 2, (radius - 2) * 2, (radius - 2) * 2)
+        painter.drawEllipse(cx - radius + 2, cy - radius + 2, (radius - 2) * 2, (radius - 2) * 2)
         
     def _draw_crosshair(self, painter: QPainter, cx: int, cy: int, radius: int):
         painter.setPen(QPen(QColor(255, 0, 0, 150), 1))
